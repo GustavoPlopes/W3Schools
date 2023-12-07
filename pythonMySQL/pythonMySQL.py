@@ -109,3 +109,51 @@ mycursor = mydb.cursor()
 # myresult = mycursor.fetchall()
 # for x in myresult:
 #     print(x)
+
+# Excluir registros de uma tabela existente usando a instrução "DELETE FROM":
+# sql = "DELETE FROM customers WHERE address = 'Mountain 21'"
+# mycursor.execute(sql)
+# mydb.commit()
+# print(mycursor.rowcount, "record(s) deleted")
+
+# "atualizar registros existentes em uma tabela usando a instrução “UPDATE”"
+# sql = "UPDATE customers SET address = 'Brasília' WHERE address = 'Lowstreet 4'"
+# mycursor.execute(sql)
+# mydb.commit()
+# print(mycursor.rowcount, "record(s) affected")
+
+# limitar o número de registros retornados da consulta usando a instrução "LIMIT"
+# mycursor.execute("SELECT * FROM customers LIMIT 2")
+# myresult = mycursor.fetchall()
+# for x in myresult:
+#     print(x)
+
+# retornar três registros, começando pelo primeiro registro, você pode usar a palavra-chave "OFFSET"
+# mycursor.execute("SELECT * FROM customers LIMIT 3 OFFSET 1")
+# myresult = mycursor.fetchall()
+# for x in myresult:
+#     print(x)
+
+# Tabela produtos criada
+# mycursor.execute("CREATE TABLE produtos (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(40))")
+
+# sql = "INSERT INTO produtos (id,name) VALUES (%s, %s)"
+# val = [
+#     ("default", "Chocolate Heaven"),
+#     ("default", "Tasty Lemons"),
+#     ("default", "Vanilla Dreams")
+# ]
+# mycursor.executemany(sql, val)
+# mydb.commit()
+# print(mycursor.rowcount, 'was inserted')
+
+# sql = "SELECT"\
+#         "customers.name AS user,"\
+#         "produtos.name AS favorite"\
+#         "FROM customers"\
+#         "JOIN produtos ON customers.fav = produtos.id"
+# mycursor.execute(sql)
+# myresult = mycursor.fetchall()
+# for x in myresult:
+#     print(x)
+
