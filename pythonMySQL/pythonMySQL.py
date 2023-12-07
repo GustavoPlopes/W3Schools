@@ -104,8 +104,8 @@ mycursor = mydb.cursor()
 #     print(x)
 
 # Use a instrução ORDER BY para classificar o resultado em ordem crescente ou decrescente.
-# sql = "SELECT * FROM customers ORDER BY name"
-# mycursor.execute(sql)
-# myresult = mycursor.fetchall()
-# for x in myresult:
-#     print(x)
+sql = "SELECT * FROM customers ORDER BY name"
+mycursor.execute(sql)
+myresult = mycursor.fetchall()
+for x in myresult:
+    print(x)
